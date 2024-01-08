@@ -16,7 +16,7 @@ function App() {
     const [selectedSubject, setSelectedSubject] = useState("")
 
     const props: UploadProps = {
-        onRemove: (file) => {
+        onRemove: (file: any) => {
             const index = fileList.indexOf(file);
             const newFileList = fileList.slice();
             newFileList.splice(index, 1);
@@ -27,7 +27,7 @@ function App() {
             setSelectedSubject("");
             setJson({});
         },
-        beforeUpload: (file) => {
+        beforeUpload: (file: any) => {
             setFileList([file]);
 
             const reader = new FileReader();
